@@ -1,0 +1,20 @@
+trigger:
+- main
+ 
+pool:
+  vmImage: ubuntu-latest
+ 
+steps:
+    - script: az bicep build --file src/demos/nested-vms-in-virtual-network/main.bicep --outfile src/demos/nested-vms-in-virtual-network/azuredeploy.json
+      displayName: 'Compile Bicep file'
+ 
+    - task: ZscalerIaCScan@1
+      inputs:
+        region: 'CUSTOM'
+        clientId: 'k1F44ijmCn04dKrTx86fkPo5n4H4W8Sz'
+        clientSecret: '0xZb2jVOGi1QdQsiC_G9ERgdoFKuNVliKhw02-9kozo-qqKBU37dYJTgG_wyecHt'
+        iacfile: 'src/demos/nested-vms-in-virtual-network/azuredeploy.json'
+        failBuild: true
+      env:
+        AUTH_URL: "https://dev-auth.zscwp.io"
+        API_URL: "https://main.dev.api.zscwp.io"
