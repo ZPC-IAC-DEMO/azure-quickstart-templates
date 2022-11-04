@@ -26,7 +26,7 @@ jobs:
       uses: Azure/bicep-build-action@v1.0.0
       with:
         bicepFilePath: ./demos/nested-vms-in-virtual-network/main.bicep
-        outputFilePath: ./demos/nested-vms-in-virtual-networkazuredeploy.json 
+        outputFilePath: ./demos/nested-vms-in-virtual-network/azuredeploy.json 
 
     - name : Zscaler IAC Scan
       uses : ZscalerCWP/Zscaler-IaC-Action@main
