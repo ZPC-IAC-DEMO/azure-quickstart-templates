@@ -39,4 +39,4 @@ jobs:
         output_format : 'human+github-sarif'
         region : 'CUSTOM'
         log_level : 'debug'
-        iac_file : 'demos/nested-vms-in-virtual-networkazure/deploy.json'
+        iac_file : 'demos/nested-vms-in-virtual-network/azuredeploy.json'
